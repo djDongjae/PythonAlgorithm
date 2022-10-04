@@ -15,36 +15,36 @@ for i in range(n):
 
 def watch(x, y, direction):
     if direction == 0:
-        while x>0:
-            x-=1
-            if board[x][y] == 'S':
-                return True
-            elif board[x][y] == 'O':
-                return False
-        return False
-    if direction == 1:
-        while x<n:
-            x+=1
-            if board[x][y] == 'S':
-                return True
-            elif board[x][y] == 'O':
-                return False
-        return False
-    if direction == 2:
-        while y>0:
-            y-=1
+        while x>=0:
             if board[x][y] == 'S':
                 return True
             if board[x][y] == 'O':
                 return False
+            x -= 1
+        return False
+    if direction == 1:
+        while x<n:
+            if board[x][y] == 'S':
+                return True
+            if board[x][y] == 'O':
+                return False
+            x += 1
+        return False
+    if direction == 2:
+        while y>=0:
+            if board[x][y] == 'S':
+                return True
+            if board[x][y] == 'O':
+                return False
+            y -= 1
         return False
     if direction == 3:
         while y<n:
-            y+=1
             if board[x][y] == 'S':
                 return True
-            elif board[x][y] == 'O':
+            if board[x][y] == 'O':
                 return False
+            y += 1
         return False
 
 def process():
