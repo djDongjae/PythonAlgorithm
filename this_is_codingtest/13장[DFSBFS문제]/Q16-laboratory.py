@@ -1,3 +1,4 @@
+#Q16[연구소] 342p
 from itertools import combinations
 
 

@@ -1,3 +1,4 @@
+#Q18[괄호변환] 347p
 def balanced_check(p):
     count = 0
     for i in range(len(p)):

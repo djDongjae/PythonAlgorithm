@@ -1,3 +1,4 @@
+#Q17[경쟁적전염] 345p
 from collections import deque
 
 n, k = map(int, input().split())

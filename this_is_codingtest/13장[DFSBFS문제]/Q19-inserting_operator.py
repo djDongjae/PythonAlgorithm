@@ -1,3 +1,4 @@
+#Q19[연산자끼워넣기] 350p
 n = int(input())
 data = list(map(int, input().split()))
 add, sub, mul, div = map(int, input().split())

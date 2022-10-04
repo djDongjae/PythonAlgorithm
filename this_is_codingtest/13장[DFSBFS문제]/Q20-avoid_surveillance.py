@@ -1,3 +1,4 @@
+#Q20[감시 피하기] 352p
 from itertools import combinations
 
 n = int(input())
