@@ -7,7 +7,7 @@ for _ in range(n):
     graph.append(list(map(int, input().split())))
 
 dx = [-1, 1, 0, 0]
-dy = [0, 0, 1, 1]
+dy = [0, 0, -1, 1]
 
 result = 0
 
@@ -18,5 +18,5 @@ def process(x, y, index):
     q = deque()
 
 
-total_count = 0
-union = [[-1]*n for _ in range(n)]
+while True:
+    union = [[-1]*n for _ in range(n)]
