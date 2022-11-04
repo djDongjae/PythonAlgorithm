@@ -4,4 +4,4 @@ def solution(N, stages):
     length = len(stages)
 
     for i in range(1, N+1):
-        count = 
+        count =
