@@ -1,4 +1,3 @@
-# Q24[실패율] 362p
 def solution(N, stages):
     answer = []
     length = len(stages)
