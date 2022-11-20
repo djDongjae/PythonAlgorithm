@@ -1,4 +1,6 @@
-n, c = map(int, input().split())
+n, c = list(map(int, input().split(' ')))
+
 array = []
-for _ in range(n):
+for i in range(n):
     array.append(int(input()))
+array.sort()
