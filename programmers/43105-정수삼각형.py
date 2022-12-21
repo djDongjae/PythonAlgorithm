@@ -1,17 +1,22 @@
-from itertools import product
-
-
 def solution(triangle):
-    sets = [0, 1]
-    data = list(product(sets, repeat=len(triangle) - 1))
-    sum_array = []
-    for i in range(len(data)):
-        index = 0
-        sum = triangle[0][0]
-        for j in range(len(triangle) - 1):
-            index += data[i][j]
-            sum += triangle[j + 1][index]
-        sum_array.append(sum)
-    return max(sum_array)
+    n = len(triangle)
+    dp = []
+    for i in range(n):
+        dp.append(triangle[i])
 
-print(solution([[7], [3, 8], [8, 1, 0], [2, 7, 4, 4], [4, 5, 2, 6, 5]]))
+    for i in range(1, n):
+        for j in range(len(dp[i])):
+            if j == 0:
+                left_down = 0
+            else:
+                left_down = dp[i-1][j-1]
+            if j == len(dp[i]) - 1:
+                right_down = 0
+            else:
+                right_down = dp[i-1][j]
+            dp[i][j] = dp[i][j] + max(left_down, right_down)
+
+    result = 0
+    for i in dp[n-1]:
+        result = max(result, i)
+    return result
