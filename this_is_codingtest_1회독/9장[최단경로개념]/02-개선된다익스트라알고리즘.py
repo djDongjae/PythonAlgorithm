@@ -12,3 +12,8 @@ for _ in range(m):
     a, b, c = map(int, input().split())
     graph[a].append((b, c))
 
+
+def dijkstra(start):
+    distance[start] = 0
+    
+
