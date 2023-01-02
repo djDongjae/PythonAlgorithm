@@ -16,4 +16,5 @@ for _ in range(m):
 def dijkstra(start):
     distance[start] = 0
     print("hello world")
+    print("hello world")
 
