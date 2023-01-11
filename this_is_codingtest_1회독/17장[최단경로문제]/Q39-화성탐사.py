@@ -11,13 +11,11 @@ for tc in range(int(input())):
     graph = []
     for _ in range(n):
         graph.append(list(map(int, input().split())))
-
     distance = [[INF]*n for _ in range(n)]
 
     x, y = 0, 0
     q = [(graph[x][y], x, y)]
     distance[x][y] = graph[x][y]
-
     while q:
         dist, x, y = heapq.heappop(q)
         if dist > distance[x][y]:
@@ -25,9 +23,11 @@ for tc in range(int(input())):
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
-            if nx < 0 or ny < 0 or nx > n-1 or ny > n-1:
+            if nx < 0 or ny < 0 or nx >= n or ny >= n:
                 continue
-            cost = dist + graph[nx][ny]
+            cost = graph[nx][ny] + dist
             if cost < distance[nx][ny]:
                 distance[nx][ny] = cost
                 heapq.heappush(q, (cost, nx, ny))
+
+    print(distance[n-1][n-1])
