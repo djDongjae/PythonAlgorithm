@@ -43,3 +43,4 @@ for i in range(1, n+1):
         result.append(i)
 
 print(max_node, max_distance, len(result))
+print("hello world")
