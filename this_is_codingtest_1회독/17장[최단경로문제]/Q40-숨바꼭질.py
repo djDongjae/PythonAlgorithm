@@ -43,8 +43,3 @@ for i in range(1, n+1):
         result.append(i)
 
 print(max_node, max_distance, len(result))
-print("hello world")
-print("hello japan")
-print("hello world")
-print("일본 여행 3일차")
-print("일본 여행 4일차")
