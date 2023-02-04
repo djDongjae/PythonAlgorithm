@@ -1,14 +1,31 @@
-a = 7
-b = 3
+def find_parent(parent, x):
+    if parent[x] != x:
+        return find_parent(parent, parent[x])
+    return parent[x]
 
-# 나누기
-print(a / b) # 기본적으로 / 연산자는 나눠진 결과를 실수형으로 처리한다.
+def union_parent(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
+    if a < b:
+        parent[b] = a
+    else:
+        parent[a] = b
 
-# 나머지
-print(a % b)
 
-# 몫
-print(a // b)
+g = int(input())
+p = int(input())
+parent = [0] * (g+1)
 
-# 거듭제곱
-print(a ** b) # a의 b제곱
+for i in range(g+1):
+    parent[i] = i
+
+result = 0
+for _ in range(p):
+    data = find_parent(parent, int(input()))
+    if data == 0:
+        break
+    else:
+        union_parent(parent, data, data-1)
+        result += 1
+
+print(result)
