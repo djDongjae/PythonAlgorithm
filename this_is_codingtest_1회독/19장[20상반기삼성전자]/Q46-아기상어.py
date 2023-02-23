@@ -23,3 +23,5 @@ def bfs():
     dist = [[-1] * n for _ in range(n)]
     q = deque([(now_x, now_y)])
     dist[now_x][now_y] = 0
+    while q:
+        
