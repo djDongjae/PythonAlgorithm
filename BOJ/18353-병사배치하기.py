@@ -9,3 +9,4 @@ for i in range(1, n):
             dp[i] = max(dp[i], dp[j] + 1)
 
 print(n - max(dp))
+print("dks")
