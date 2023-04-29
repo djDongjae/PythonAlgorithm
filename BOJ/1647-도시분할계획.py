@@ -36,3 +36,4 @@ for edge in edges:
         last = cost
 
 print(result-last)
+print("hello world")
